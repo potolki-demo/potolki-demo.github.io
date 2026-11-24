@@ -470,6 +470,22 @@ textarea.input { padding: 12px 14px; min-height: 88px; resize: vertical; line-he
   .nav { gap: 16px; }
 }
 @media (min-width: 1280px) { h1 { font-size: 54px; } }
+/* Широкие мониторы: контент растёт вместе с экраном, без пустых полей по бокам */
+@media (min-width: 1440px) {
+  .container { max-width: 1440px; padding: 0 56px; }
+  h1 { font-size: 62px; }
+  .hero__grid { gap: 80px; }
+  .hero__lead { font-size: 20px; }
+  .calc { grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; }
+  .booking { gap: 48px; }
+  .section__head { max-width: 760px; }
+}
+@media (min-width: 1800px) {
+  .container { max-width: 1640px; padding: 0 64px; }
+  body { font-size: 18px; }
+  h1 { font-size: 68px; }
+  .calc { grid-template-columns: minmax(0, 1fr) 460px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
