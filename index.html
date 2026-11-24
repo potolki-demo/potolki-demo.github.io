@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="img/hero-800.webp" media="(max-width: 1023px)">
 <link rel="preload" as="image" href="img/hero-1400.webp" media="(min-width: 1024px)">
-<script src="config.js"></script>
+<script src="config.js?v=4"></script>
 <script>
   /* Цвета и шрифты из config.js применяем до отрисовки, чтобы не было мигания */
   (function () {
@@ -39,7 +39,7 @@
     document.head.appendChild(l);
   })();
 </script>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <a class="skip" href="#calc">Перейти к калькулятору</a>
@@ -74,6 +74,6 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <noscript><p style="padding:20px;text-align:center">Для расчёта стоимости включите JavaScript или позвоните нам.</p></noscript>
-<script src="app.js" defer></script>
+<script src="app.js?v=4" defer></script>
 </body>
 </html>

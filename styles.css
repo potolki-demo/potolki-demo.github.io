@@ -457,7 +457,7 @@ textarea.input { padding: 12px 14px; min-height: 88px; resize: vertical; line-he
   .calc__result { position: sticky; top: calc(var(--header-h) + 20px); }
   /* полотна: 3 в ряд на всех ширинах, в 5 колонок текст не помещается */
   .booking { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px; }
-  .types { grid-template-columns: repeat(4, 1fr); }
+  .types { grid-template-columns: repeat(3, 1fr); }
   .works { grid-template-columns: repeat(3, 1fr); }
   .filters { grid-template-columns: auto 1fr; align-items: center; column-gap: 20px; }
   .filters .chips { margin-top: 6px; }
@@ -471,9 +471,15 @@ textarea.input { padding: 12px 14px; min-height: 88px; resize: vertical; line-he
 }
 @media (min-width: 1280px) { h1 { font-size: 54px; } }
 /* Широкие мониторы: контент растёт вместе с экраном, без пустых полей по бокам */
+/* ПК: контент тянется на всю ширину экрана, поля по бокам 4-5 % */
+@media (min-width: 1280px) {
+  .cheap { max-width: none; }
+  .faq { max-width: none; grid-template-columns: 1fr 1fr; align-items: start; column-gap: 16px; }
+  .container { max-width: 1840px; padding: 0 clamp(40px, 4.5vw, 96px); }
+}
 @media (min-width: 1440px) {
-  .container { max-width: 1440px; padding: 0 56px; }
   h1 { font-size: 62px; }
+  .hero__media { aspect-ratio: 5 / 4; }
   .hero__grid { gap: 80px; }
   .hero__lead { font-size: 20px; }
   .calc { grid-template-columns: minmax(0, 1fr) 420px; gap: 40px; }
@@ -481,7 +487,6 @@ textarea.input { padding: 12px 14px; min-height: 88px; resize: vertical; line-he
   .section__head { max-width: 760px; }
 }
 @media (min-width: 1800px) {
-  .container { max-width: 1640px; padding: 0 64px; }
   body { font-size: 18px; }
   h1 { font-size: 68px; }
   .calc { grid-template-columns: minmax(0, 1fr) 460px; }
