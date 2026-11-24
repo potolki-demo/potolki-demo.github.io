@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- SEO: эти строки читают поисковики и соцсети, поменяйте их под клиента (JS они не выполняют) -->
+<title>Натяжные потолки в Якутске под ключ - Потолки Про</title>
+<meta name="description" content="Натяжные потолки в Якутске: онлайн-расчёт цены за минуту, бесплатный замер, монтаж за 1 день. Цена фиксируется в договоре. Гарантия 12 лет.">
+<link rel="canonical" href="https://potolki-demo.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Натяжные потолки в Якутске под ключ - Потолки Про">
+<meta property="og:description" content="Посчитайте цену онлайн и запишитесь на бесплатный замер. Монтаж за 1 день.">
+<meta property="og:image" content="https://potolki-demo.github.io/img/og.jpg">
+<meta property="og:url" content="https://potolki-demo.github.io/">
+<meta name="theme-color" content="#F6F3EE">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="robots" content="noindex"><!-- демо: не индексировать. Для боевого сайта удалить эту строку -->
+<!-- конец SEO-блока -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/hero-800.webp" media="(max-width: 1023px)">
+<link rel="preload" as="image" href="img/hero-1400.webp" media="(min-width: 1024px)">
+<script src="config.js"></script>
+<script>
+  /* Цвета и шрифты из config.js применяем до отрисовки, чтобы не было мигания */
+  (function () {
+    var t = (window.SITE_CONFIG || {}).theme || {}, r = document.documentElement.style;
+    var map = { accent: "--accent", accentHover: "--accent-hover", accentSoft: "--accent-soft", bg: "--bg", surface2: "--surface-2", text: "--text" };
+    for (var k in map) if (t[k]) r.setProperty(map[k], t[k]);
+    var h = t.fontHead || "Manrope", b = t.fontBody || "Inter";
+    r.setProperty("--font-head", '"' + h + '", system-ui, sans-serif');
+    r.setProperty("--font-body", '"' + b + '", system-ui, sans-serif');
+    var fams = [h + ":wght@600;700;800"]; if (b !== h) fams.push(b + ":wght@400;500;600");
+    var l = document.createElement("link"); l.rel = "stylesheet";
+    l.href = "https://fonts.googleapis.com/css2?" + fams.map(function (f) { return "family=" + f.replace(/ /g, "+"); }).join("&") + "&display=swap";
+    document.head.appendChild(l);
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#calc">Перейти к калькулятору</a>
+
+<header class="header" id="header"></header>
+
+<main id="main">
+  <section class="hero" id="top"></section>
+  <section class="section section--tight" id="prices" aria-labelledby="prices-h"></section>
+  <section class="section" id="calc" aria-labelledby="calc-h"></section>
+  <section class="section section--alt" id="included" aria-labelledby="included-h"></section>
+  <section class="section" id="types" aria-labelledby="types-h"></section>
+  <section class="section section--alt" id="works" aria-labelledby="works-h"></section>
+  <section class="section section--tight" id="photo-calc"></section>
+  <section class="section" id="steps" aria-labelledby="steps-h"></section>
+  <section class="section section--alt" id="reviews" aria-labelledby="reviews-h"></section>
+  <section class="section" id="guarantee" aria-labelledby="guarantee-h"></section>
+  <section class="section section--alt" id="faq" aria-labelledby="faq-h"></section>
+  <section class="section" id="booking" aria-labelledby="booking-h"></section>
+</main>
+
+<footer class="footer" id="footer"></footer>
+
+<div class="sticky-bar" id="sticky-bar" hidden></div>
+
+<dialog class="lightbox" id="lightbox" aria-label="Фото работы">
+  <form method="dialog"><button class="lightbox__close" aria-label="Закрыть">×</button></form>
+  <img alt="">
+  <p class="lightbox__cap"></p>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<noscript><p style="padding:20px;text-align:center">Для расчёта стоимости включите JavaScript или позвоните нам.</p></noscript>
+<script src="app.js" defer></script>
+</body>
+</html>

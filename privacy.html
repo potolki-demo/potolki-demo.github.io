@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика обработки персональных данных</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script src="config.js"></script>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .doc { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  .doc h1 { font-size: clamp(26px, 5vw, 36px); margin-bottom: 8px; }
+  .doc h2 { font-size: 20px; margin: 28px 0 8px; }
+  .doc p, .doc li { line-height: 1.6; margin-bottom: 8px; }
+  .doc ul { padding-left: 20px; }
+  .doc .back { display: inline-block; margin-bottom: 24px; }
+  .doc .warn { padding: 12px 16px; border-radius: 12px; background: var(--accent-soft); margin: 16px 0; }
+</style>
+</head>
+<body>
+<main class="doc">
+  <a class="back" href="./">← На главную</a>
+  <h1>Политика обработки персональных данных</h1>
+  <p class="warn">Шаблон для демо. Перед запуском сайта проверьте текст с юристом и укажите реальные данные оператора.</p>
+
+  <h2>1. Кто обрабатывает данные</h2>
+  <p>Оператор персональных данных: <span data-c="legal"></span>, адрес: <span data-c="address"></span>, телефон: <span data-c="phone"></span>. Политика составлена по Федеральному закону от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+
+  <h2>2. Какие данные мы получаем</h2>
+  <ul>
+    <li>имя;</li>
+    <li>номер телефона;</li>
+    <li>адрес или район объекта;</li>
+    <li>удобные дата и время замера, комментарий к заявке;</li>
+    <li>параметры расчёта из калькулятора (площадь, вид потолка).</li>
+  </ul>
+
+  <h2>3. Зачем</h2>
+  <p>Чтобы связаться с вами, согласовать и провести замер, рассчитать стоимость и заключить договор. Данные не используются для рассылок без отдельного согласия.</p>
+
+  <h2>4. Как обрабатываем</h2>
+  <p>Заявка передаётся оператору через выбранный вами мессенджер или по защищённому каналу. Данные хранятся не дольше, чем нужно для выполнения заказа и требований закона, и не передаются третьим лицам, кроме случаев, предусмотренных законом.</p>
+  <p>Калькулятор и форма сохраняют введённое только в вашем браузере, чтобы при повторном открытии не вводить всё заново. Эти данные не отправляются, пока вы не нажмёте «Записаться на замер».</p>
+
+  <h2>5. Ваши права</h2>
+  <p>Вы можете узнать, какие данные о вас хранятся, попросить исправить или удалить их и отозвать согласие. Для этого позвоните по телефону <span data-c="phone"></span> или напишите нам.</p>
+
+  <h2>6. Изменения</h2>
+  <p>Оператор может обновлять политику. Действующая редакция всегда доступна на этой странице.</p>
+</main>
+<script>
+  (function () {
+    var c = (window.SITE_CONFIG || {}).company || {};
+    var t = (window.SITE_CONFIG || {}).theme || {};
+    if (t.accentSoft) document.documentElement.style.setProperty("--accent-soft", t.accentSoft);
+    var v = { legal: c.legal, address: c.address, phone: c.phone, date: new Date().toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" }) };
+    document.querySelectorAll("[data-c]").forEach(function (el) { el.textContent = v[el.getAttribute("data-c")] || "-"; });
+    if (c.name) document.title = "Политика обработки персональных данных - " + c.name;
+  })();
+</script>
+</body>
+</html>
